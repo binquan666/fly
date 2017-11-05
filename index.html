@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>43期VIP</title>
+  <style>
+		*{padding:0;margin:0;}
+		li{list-style:none;}
+		.box{
+			width:500px;
+			margin:50px auto;
+		
+		}
+		.box .wrap{
+			width:100%;
+			height:140px;
+			border-radius:5px;
+			background-color: #ccc;
+			padding-top:10px;
+			margin-bottom:50px;
+		}
+		.box .wrap #text{
+			width:480px;
+			height:80px;
+			display:block;
+			margin:0 auto;
+			border-radius:5px;
+			resize:none;
+		
+		}
+		
+		}
+		.box .wrap::after{
+			content:"";
+			display:block;
+			clear:both;
+		}
+		.box .wrap p{
+			float:left;
+			position:relative;
+			width:40px;
+			height:40px;
+			margin-top:10px;
+			margin-left:10px;
+		}
+		.box .wrap p img{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			display:none;
+		
+		}
+		.box .wrap #btn{
+			float:right;
+			margin-top:15px;
+			margin-right:10px;
+			width:80px;
+			height:30px;
+			background-color: #ff6666;
+			border:none;
+			border-radius:5px;
+			color:#fff;
+			font-weight:bold;
+		}
+		.box ul li{
+			text-align:left;
+			border-bottom:1px solid #eee;
+			vertical-align:middle;
+			padding:5px 0;
+		
+		}
+		.box ul li img{
+			width:40px;
+			height:40px;
+			vertical-align:middle;
+		}
+		.box ul li p{
+			display:inline-block;
+			vertical-align:middle;
+			margin-left:5px;
+
+		}
+  </style>
+  </head>
+  <body>
+	<div class="box">
+		<div class="wrap">
+			<textarea name="" id="text"></textarea>
+			<p>
+				<img style="display: block;"  src="images/tx1.jpg" alt="">
+				<img src="images/tx2.jpg" alt="">
+			</p>
+			<button id="btn">发表</button>
+		
+		</div>
+		<ul id="list">
+			<!-- 
+			<li>
+				<img src="images/tx1.jpg" alt="">
+				<p></p>
+			
+			</li>
+			<li>
+				<img src="images/tx2.jpg" alt="">
+				<p></p>
+			</li>
+			<li>
+				<img src="images/tx1.jpg" alt="">
+				<p></p>
+			</li>
+			<li>
+				<img src="images/tx2.jpg" alt="">
+				<p></p>
+			
+			</li>
+			<li>
+				<img src="images/tx1.jpg" alt="">
+				<p></p>
+			</li>
+			<li>
+				<img src="images/tx2.jpg" alt="">
+				<p></p>
+			</li> -->
+		
+		</ul>
+		
+	</div>
+	<script>
+		var otext = document.getElementById("text");
+		var obtn = document.getElementById("btn");
+		var oimg = document.querySelectorAll(".box .wrap p img");
+		var oul = document.querySelector("ul");
+		var src = "images/tx1.jpg";
+		oimg[0].onclick = function(){
+			this.style.display = "none";
+			oimg[1].style.display = "block";
+			src =oimg[1].src ;
+		};
+		oimg[1].onclick = function(){
+			this.style.display = "none";
+			oimg[0].style.display = "block";
+			src =oimg[0].src ;
+		};
+		obtn.onclick = function(){
+			//alert(1);
+			var val = otext.value;
+			oul.innerHTML += '<li><img src='+ src +' alt=""><p>' + val + '</p></li>';
+			otext.value = " ";
+
+			
+		
+		
+		};
+	</script>
+</body>
+</html>
